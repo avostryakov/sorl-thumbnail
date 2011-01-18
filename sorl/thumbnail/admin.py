@@ -45,8 +45,8 @@ class AdminClearWidget(forms.CheckboxInput):
 
 
 class AdminClearableImageWidget(forms.MultiWidget):
-    def __init__(self, attrs=None):
-        widgets = (AdminImageWidget(attrs=attrs), AdminClearWidget())
+    def __init__(self, attrs=None, thumbnail_geometry=None):
+        widgets = (AdminImageWidget(attrs=attrs, thumbnail_geometry=thumbnail_geometry), AdminClearWidget())
         super(AdminClearableImageWidget, self).__init__(widgets, attrs)
 
     def decompress(self, value):
